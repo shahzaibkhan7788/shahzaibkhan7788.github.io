@@ -2,50 +2,294 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shahzaib Khan | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shahzaib Khan | AI Engineer & Data Scientist</title>
+  <meta name="description" content="Shahzaib Khan – Data Scientist, Generative AI, Agentic AI, RAG Systems, NLP & Computer Vision" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card: #12172a;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #38bdf8;
+      --accent-2: #22c55e;
+      --border: #1f2937;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(1200px 600px at 10% -10%, #1e3a8a33, transparent),
+                  radial-gradient(1000px 500px at 90% 10%, #065f4633, transparent),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 32px 20px;
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 40px;
+      align-items: center;
+      margin-bottom: 80px;
+    }
+
+    @media (max-width: 900px) {
+      header { grid-template-columns: 1fr; }
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: #0ea5e933;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    .cta {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 12px 18px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: linear-gradient(135deg, #0ea5e9, #22c55e);
+      color: #020617;
+      font-weight: 600;
+    }
+
+    .btn.secondary {
+      background: transparent;
+      color: var(--text);
+    }
+
+    section { margin-bottom: 80px; }
+
+    section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, #12172a, #0b0f19);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 10px 30px #020617aa;
+    }
+
+    .card h3 { margin-bottom: 10px; }
+
+    .card p { color: var(--muted); font-size: 0.95rem; }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .tag {
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #1f2937;
+      color: #93c5fd;
+      border: 1px solid var(--border);
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 40px 0 10px;
+      font-size: 0.9rem;
+    }
+
+    .socials {
+      display: flex;
+      gap: 16px;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Header / Intro -->
-  <header class="header">
-    <h1>Shahzaib Khan</h1>
-    <p>BSCIS Student | Machine Learning Enthusiast</p>
-    <p><a href="https://github.com/shahzaibkhan7788">GitHub</a> • <a href="https://www.linkedin.com/in/shahzaib-khan-35435b285">LinkedIn</a></p>
-  </header>
+  <div class="container">
 
-  <!-- About Me -->
-  <section id="about" class="section">
-    <h2>About Me</h2>
-    <p>I am a dynamic BSCIS student, constantly elevating skills and fueling passion for machine learning. A dedicated explorer on GitHub.</p>
-  </section>
+    <!-- HERO -->
+    <header>
+      <div>
+        <span class="badge">Generative AI · Agentic AI · RAG Systems</span>
+        <h1>Shahzaib Khan<br/>AI Engineer & Data Scientist</h1>
+        <p class="subtitle">
+          Junior Data Scientist with hands-on experience in LLMs, autonomous agents, NLP, and Computer Vision.
+          I design end‑to‑end AI systems that move from research to production.
+        </p>
+        <div class="cta">
+          <a class="btn" href="https://github.com/shahzaibkhan7788" target="_blank">GitHub</a>
+          <a class="btn secondary" href="https://www.linkedin.com/in/shahzaib-khan-35435b285" target="_blank">LinkedIn</a>
+          <a class="btn secondary" href="mailto:shahzaibkhan.career@gmail.com">Email</a>
+        </div>
+      </div>
 
-  <!-- Skills -->
-  <section id="skills" class="section">
-    <h2>Skills</h2>
-    <ul>
-      <li>HTML & CSS</li>
-      <li>JavaScript</li>
-      <li>Machine Learning</li>
-      <li>Python</li>
-      <li>Git & GitHub</li>
-    </ul>
-  </section>
+      <div class="card">
+        <h3>Current Focus</h3>
+        <p>
+          • Agentic AI pipelines (LangGraph, LangChain)<br/>
+          • Retrieval‑Augmented Generation (FAISS, BM25)<br/>
+          • AI for Healthcare, Cybersecurity & FinTech<br/>
+          • Applied ML research & system design
+        </p>
+      </div>
+    </header>
 
-  <!-- Projects -->
-  <section id="projects" class="section">
-    <h2>Projects</h2>
-    <ul>
-      <li><a href="#">Project 1 (Add Link)</a></li>
-      <li><a href="#">Project 2 (Add Link)</a></li>
-      <li><a href="#">Project 3 (Add Link)</a></li>
-    </ul>
-  </section>
+    <!-- SKILLS -->
+    <section>
+      <h2><i data-lucide="cpu"></i> Core Skills</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>AI & ML</h3>
+          <p>Machine Learning, Deep Learning, Generative AI, LLMs, NLP, Computer Vision, Time Series</p>
+          <div class="tags">
+            <span class="tag">PyTorch</span><span class="tag">Scikit‑Learn</span><span class="tag">Keras</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Agentic & RAG Systems</h3>
+          <p>LangChain, LangGraph, LangSmith, Vector Databases, Tool‑Using Agents</p>
+          <div class="tags">
+            <span class="tag">FAISS</span><span class="tag">Chroma</span><span class="tag">BM25</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Engineering</h3>
+          <p>Python, REST APIs, Docker, SQL, Git, Streamlit, React (basic)</p>
+          <div class="tags">
+            <span class="tag">Docker</span><span class="tag">PostgreSQL</span><span class="tag">GitHub Actions</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <footer class="footer">
-    <p>Made with ❤️ by Shahzaib</p>
-  </footer>
+    <!-- PROJECTS -->
+    <section>
+      <h2><i data-lucide="layers"></i> Featured Projects</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>RAG‑Based AI Healthcare Assistant</h3>
+          <p>
+            Multi‑agent medical assistant using LLMs and RAG for safe, citation‑aware clinical support.
+          </p>
+          <div class="tags">
+            <span class="tag">LLMs</span><span class="tag">RAG</span><span class="tag">Healthcare NLP</span>
+          </div>
+          <a href="https://github.com/shahzaibkhan7788/smart-AI-healthcare-assistant-chatbot" target="_blank">View Project →</a>
+        </div>
+        <div class="card">
+          <h3>AI‑Powered Intrusion Detection System</h3>
+          <p>
+            Autoencoder‑based anomaly detection on CICIDS‑2017 for real‑world cybersecurity threats.
+          </p>
+          <div class="tags">
+            <span class="tag">Cybersecurity</span><span class="tag">Autoencoders</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Crypto ML Trading System</h3>
+          <p>
+            ML‑driven crypto trading strategies with feature engineering, prediction & backtesting.
+          </p>
+          <div class="tags">
+            <span class="tag">Time Series</span><span class="tag">Finance</span>
+          </div>
+          <a href="https://github.com/shahzaibkhan7788/crypto-ml-strategies" target="_blank">View Project →</a>
+        </div>
+      </div>
+    </section>
 
+    <!-- EXPERIENCE -->
+    <section>
+      <h2><i data-lucide="briefcase"></i> Experience</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Junior Data Scientist & ML Intern</h3>
+          <p><strong>Neurog.ai</strong> · Islamabad (2025)</p>
+          <p>
+            Built ML‑powered trading features, collaborated on full‑stack AI systems, and worked on real FinTech workflows.
+          </p>
+        </div>
+        <div class="card">
+          <h3>ML Research Intern</h3>
+          <p><strong>Pattern Recognition Lab, PIEAS</strong> · 2024</p>
+          <p>
+            Hybrid AE‑DTR models for critical heat flux prediction with advanced evaluation & visualization.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section>
+      <h2><i data-lucide="graduation-cap"></i> Education</h2>
+      <div class="card">
+        <h3>Bachelor of Computer Science (AI)</h3>
+        <p>Pakistan Institute of Engineering & Applied Sciences (PIEAS)</p>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2026 Shahzaib Khan · Built for GitHub Pages</p>
+    </footer>
+
+  </div>
+
+  <script>
+    lucide.createIcons();
+  </script>
 </body>
 </html>
