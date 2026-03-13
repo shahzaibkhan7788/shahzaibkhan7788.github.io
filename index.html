@@ -1,307 +1,345 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shahzaib Khan | AI Engineer & Data Scientist</title>
-  <meta name="description" content="Shahzaib Khan – Data Scientist, Generative AI, Agentic AI, RAG Systems, NLP & Computer Vision" />
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
+<title>Shahzaib Khan | AI Engineer</title>
 
-  <style>
-    :root {
-      --bg: #0b0f19;
-      --card: #12172a;
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-      --accent: #38bdf8;
-      --accent-2: #22c55e;
-      --border: #1f2937;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+<style>
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: radial-gradient(1200px 600px at 10% -10%, #1e3a8a33, transparent),
-                  radial-gradient(1000px 500px at 90% 10%, #065f4633, transparent),
-                  var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
+body{
+font-family:'Inter',sans-serif;
+background:#0b0f19;
+color:#e5e7eb;
+line-height:1.6;
+}
 
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 32px 20px;
-    }
+/* HEADER */
 
-    header {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 40px;
-      align-items: center;
-      margin-bottom: 80px;
-    }
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:25px 8%;
+position:fixed;
+width:100%;
+top:0;
+background:rgba(11,15,25,0.9);
+backdrop-filter:blur(8px);
+z-index:1000;
+}
 
-    @media (max-width: 900px) {
-      header { grid-template-columns: 1fr; }
-    }
+.logo{
+font-weight:700;
+font-size:20px;
+}
 
-    .badge {
-      display: inline-block;
-      padding: 6px 14px;
-      border-radius: 999px;
-      background: #0ea5e933;
-      color: var(--accent);
-      font-weight: 500;
-      margin-bottom: 16px;
-    }
+nav a{
+margin-left:25px;
+color:#9ca3af;
+text-decoration:none;
+font-weight:500;
+transition:0.3s;
+}
 
-    h1 {
-      font-size: clamp(2.2rem, 4vw, 3.2rem);
-      line-height: 1.2;
-      margin-bottom: 16px;
-    }
+nav a:hover{
+color:#38bdf8;
+}
 
-    .subtitle {
-      font-size: 1.1rem;
-      color: var(--muted);
-      margin-bottom: 24px;
-    }
+/* HERO */
 
-    .cta {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:0 20px;
+background:
+radial-gradient(circle at 20% 20%,#1e3a8a55,transparent 40%),
+radial-gradient(circle at 80% 30%,#065f4655,transparent 40%);
+}
 
-    .btn {
-      padding: 12px 18px;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      background: linear-gradient(135deg, #0ea5e9, #22c55e);
-      color: #020617;
-      font-weight: 600;
-    }
+.hero h1{
+font-size:55px;
+margin-bottom:20px;
+}
 
-    .btn.secondary {
-      background: transparent;
-      color: var(--text);
-    }
+.hero p{
+max-width:650px;
+color:#9ca3af;
+font-size:18px;
+margin-bottom:35px;
+}
 
-    section { margin-bottom: 80px; }
+.btn{
+background:linear-gradient(135deg,#38bdf8,#22c55e);
+padding:14px 28px;
+border-radius:10px;
+text-decoration:none;
+font-weight:600;
+color:#020617;
+}
 
-    section h2 {
-      font-size: 1.8rem;
-      margin-bottom: 24px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+/* PROJECTS */
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-    }
+.projects{
+margin-top:80px;
+}
 
-    .card {
-      background: linear-gradient(180deg, #12172a, #0b0f19);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 24px;
-      box-shadow: 0 10px 30px #020617aa;
-    }
+.project{
+position:relative;
+height:500px;
+overflow:hidden;
+cursor:pointer;
+}
 
-    .card h3 { margin-bottom: 10px; }
+.project img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:transform 0.7s ease;
+}
 
-    .card p { color: var(--muted); font-size: 0.95rem; }
+.project:hover img{
+transform:scale(1.1);
+}
 
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 12px;
-    }
+.overlay{
+position:absolute;
+bottom:0;
+width:100%;
+padding:60px;
+background:linear-gradient(transparent,rgba(0,0,0,0.9));
+}
 
-    .tag {
-      font-size: 0.75rem;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: #1f2937;
-      color: #93c5fd;
-      border: 1px solid var(--border);
-    }
+.overlay h2{
+font-size:30px;
+margin-bottom:10px;
+}
 
-    footer {
-      text-align: center;
-      color: var(--muted);
-      padding: 40px 0 10px;
-      font-size: 0.9rem;
-    }
+.overlay p{
+color:#d1d5db;
+margin-bottom:15px;
+}
 
-    .socials {
-      display: flex;
-      gap: 16px;
-      margin-top: 20px;
-    }
-  </style>
+.overlay a{
+color:#38bdf8;
+text-decoration:none;
+font-weight:600;
+}
+
+/* EXPERIENCE */
+
+.experience{
+padding:100px 10%;
+background:#0f1629;
+}
+
+.section-title{
+font-size:35px;
+margin-bottom:40px;
+}
+
+.exp-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.card{
+background:#12172a;
+padding:25px;
+border-radius:12px;
+border:1px solid #1f2937;
+}
+
+.card h3{
+margin-bottom:10px;
+}
+
+/* CONTACT */
+
+.contact{
+text-align:center;
+padding:100px 20px;
+}
+
+.contact a{
+margin:10px;
+display:inline-block;
+color:#38bdf8;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:30px;
+color:#6b7280;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:800px){
+
+.hero h1{
+font-size:40px;
+}
+
+.overlay{
+padding:30px;
+}
+
+}
+
+</style>
+
 </head>
+
 <body>
 
-  <div class="container">
+<header>
 
-    <!-- HERO -->
-    <header>
-      <div>
-        <span class="badge">Generative AI · Agentic AI · RAG Systems</span>
-        <h2>Shahzaib Khan<br/>AI Engineer & Data Scientist</h2>
-        <p class="subtitle">
-          Junior Data Scientist with hands-on experience in LLMs, autonomous agents, NLP, and Computer Vision.
-          I design end‑to‑end AI systems that move from research to production.
-        </p>
-        <div class="cta">
-          <a class="btn" href="https://github.com/shahzaibkhan7788" target="_blank">GitHub</a>
-          <a class="btn secondary" href="https://www.linkedin.com/in/shahzaib-khan-35435b285" target="_blank">LinkedIn</a>
-          <a class="btn secondary" href="mailto:shahzaibkhan.career@gmail.com">Email</a>
-        </div>
-      </div>
+<div class="logo">Shahzaib Khan</div>
 
-      <div class="card">
-        <h3>Current Focus</h3>
-        <p>
-          • Agentic AI pipelines (LangGraph, LangChain)<br/>
-          • Retrieval‑Augmented Generation (FAISS, BM25)<br/>
-          • AI for Healthcare, Cybersecurity & FinTech<br/>
-          • Applied ML research & system design
-        </p>
-      </div>
-    </header>
+<nav>
+<a href="#work">Work</a>
+<a href="#contact">Contact</a>
+</nav>
 
-    <!-- SKILLS -->
-    <section>
-      <h2><i data-lucide="cpu"></i> Core Skills</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>AI & ML</h3>
-          <p>Machine Learning, Deep Learning, Generative AI, LLMs, NLP, Computer Vision, Time Series</p>
-          <div class="tags">
-            <span class="tag">PyTorch</span><span class="tag">Scikit‑Learn</span><span class="tag">Keras</span>
-          </div>
-        </div>
-        <div class="card">
-          <h3>Agentic & RAG Systems</h3>
-          <p>LangChain, LangGraph, LangSmith, Vector Databases, Tool‑Using Agents</p>
-          <div class="tags">
-            <span class="tag">FAISS</span><span class="tag">Chroma</span><span class="tag">BM25</span>
-          </div>
-        </div>
-        <div class="card">
-          <h3>Engineering</h3>
-          <p>Python, REST APIs, Docker, SQL, Git, Streamlit, React (basic)</p>
-          <div class="tags">
-            <span class="tag">Docker</span><span class="tag">PostgreSQL</span><span class="tag">GitHub Actions</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-  <section>
-    <h2><i data-lucide="layers"></i> Featured Projects</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Real-time Skeleton-Based Surveillance (FYP)</h3>
-        <p>
-          Human-centric anomaly detection using computer vision and skeleton-based tracking. Detects diverse actions including fighting, gun usage, and more.
-        </p>
-        <div class="tags">
-          <span class="tag">Computer Vision</span><span class="tag">Pose Estimation</span><span class="tag">Surveillance</span>
-        </div>
-        <a href="https://github.com/shahzaibkhan7788/Real-time-Skeleton-Based-Surveillance" target="_blank">View Project →</a>
-      </div>
-      <div class="card">
-        <h3>Adaptive Reasoning GitHub AI Agent (Hackathon Project)</h3>
-        <p>
-          Intelligent GitHub assistant powered by Mistral AI. Adapts reasoning depth, supports voice I/O, persistent chat, and GitHub workflow automation.
-        </p>
-        <div class="tags">
-          <span class="tag">AI Agent</span><span class="tag">RAG</span><span class="tag">Automation</span>
-        </div>
-        <a href="https://github.com/shahzaibkhan7788/Adaptive_Reasoning_GitHub_AI_Agent" target="_blank">View Project →</a>
-      </div>
-      <div class="card">
-        <h3>Smart AI Healthcare Assistant</h3>
-        <p>
-          Multi-agent medical assistant using LLMs and RAG for safe, citation-aware clinical support.
-        </p>
-        <div class="tags">
-          <span class="tag">LLMs</span><span class="tag">RAG</span><span class="tag">Healthcare NLP</span>
-        </div>
-        <a href="https://github.com/shahzaibkhan7788/smart-AI-healthcare-assistant-chatbot" target="_blank">View Project →</a>
-      </div>
-      <div class="card">
-        <h3>Crypto ML Trading System</h3>
-        <p>
-          ML‑driven crypto trading strategies with feature engineering, prediction & backtesting.
-        </p>
-        <div class="tags">
-          <span class="tag">Time Series</span><span class="tag">Finance</span>
-        </div>
-        <a href="https://github.com/shahzaibkhan7788/crypto-ml-strategies" target="_blank">View Project →</a>
-      </div>
-    </div>
-  </section>
+</header>
 
 
-    <!-- EXPERIENCE -->
-    <section>
-      <h2><i data-lucide="briefcase"></i> Experience</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>Junior Data Scientist & ML Intern</h3>
-          <p><strong>Neurog.ai</strong> · Islamabad (2025)</p>
-          <p>
-            Built ML‑powered trading features, collaborated on full‑stack AI systems, and worked on real FinTech workflows.
-          </p>
-        </div>
-        <div class="card">
-          <h3>ML Research Intern</h3>
-          <p><strong>Pattern Recognition Lab, PIEAS</strong> · 2024</p>
-          <p>
-            Hybrid AE‑DTR models for critical heat flux prediction with advanced evaluation & visualization.
-          </p>
-        </div>
-      </div>
-    </section>
+<section class="hero">
 
-    <!-- EDUCATION -->
-    <section>
-      <h2><i data-lucide="graduation-cap"></i> Education</h2>
-      <div class="card">
-        <h3>Bachelor of Computer Science (AI)</h3>
-        <p>Pakistan Institute of Engineering & Applied Sciences (PIEAS)</p>
-      </div>
-    </section>
+<h1>AI Engineer & Data Scientist</h1>
 
-    <footer>
-      <p>© 2026 Shahzaib Khan · Built for GitHub Pages</p>
-    </footer>
+<p>
+Building intelligent systems using Generative AI,
+Agentic AI pipelines, Retrieval-Augmented Generation,
+and machine learning research.
+</p>
 
-  </div>
+<a class="btn" href="#work">View My Work</a>
 
-  <script>
-    lucide.createIcons();
-  </script>
+</section>
+
+
+<section id="work" class="projects">
+
+<div class="project">
+
+<img src="images/github-agent.jpg">
+
+<div class="overlay">
+<h2>Adaptive Reasoning GitHub AI Agent</h2>
+<p>Agentic AI assistant for GitHub automation, code analysis and workflow reasoning.</p>
+<a href="https://github.com/shahzaibkhan7788/Adaptive_Reasoning_GitHub_AI_Agent">View Project →</a>
+</div>
+
+</div>
+
+
+<div class="project">
+
+<img src="images/health-ai.jpg">
+
+<div class="overlay">
+<h2>AI Healthcare Assistant</h2>
+<p>Multi-agent RAG system delivering citation-aware medical knowledge assistance.</p>
+<a href="https://github.com/shahzaibkhan7788/smart-AI-healthcare-assistant-chatbot">View Project →</a>
+</div>
+
+</div>
+
+
+<div class="project">
+
+<img src="images/surveillance.jpg">
+
+<div class="overlay">
+<h2>Real-time Skeleton-Based Surveillance</h2>
+<p>Computer vision system detecting abnormal human activities using pose estimation.</p>
+<a href="https://github.com/shahzaibkhan7788/Real-time-Skeleton-Based-Surveillance">View Project →</a>
+</div>
+
+</div>
+
+
+<div class="project">
+
+<img src="images/crypto.jpg">
+
+<div class="overlay">
+<h2>Crypto ML Trading System</h2>
+<p>Machine learning based cryptocurrency trading strategy with prediction and backtesting.</p>
+<a href="https://github.com/shahzaibkhan7788/crypto-ml-strategies">View Project →</a>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="experience">
+
+<h2 class="section-title">Experience</h2>
+
+<div class="exp-grid">
+
+<div class="card">
+<h3>Machine Learning Intern</h3>
+<p><strong>Neurog.ai</strong></p>
+<p>
+Worked on AI-powered trading features, backend APIs, and ML models for financial systems.
+</p>
+</div>
+
+<div class="card">
+<h3>ML Research Intern</h3>
+<p><strong>Pattern Recognition Lab — PIEAS</strong></p>
+<p>
+Developed hybrid Autoencoder + Decision Tree models for critical heat flux prediction.
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section id="contact" class="contact">
+
+<h2 class="section-title">Contact</h2>
+
+<p>Feel free to connect with me.</p>
+
+<a href="mailto:shahzaibkhan.career@gmail.com">Email</a>
+<a href="https://github.com/shahzaibkhan7788">GitHub</a>
+<a href="https://www.linkedin.com/in/shahzaib-khan-35435b285">LinkedIn</a>
+
+</section>
+
+
+<footer>
+
+© 2026 Shahzaib Khan
+
+</footer>
+
 </body>
 </html>
+```
