@@ -3,177 +3,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shahzaib Khan | AI Engineer Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <title>Shahzaib Khan | AI Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-dark: #0b0f19;
-            --card-bg: #111827;
+            --bg-dark: #05070a;
+            --card-bg: #0f141e;
             --accent: #38bdf8;
             --border: #1f2937;
+            --text-main: #f3f4f6;
             --text-muted: #9ca3af;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        
         body {
             font-family: 'Inter', sans-serif;
             background: var(--bg-dark);
-            color: #e5e7eb;
-            line-height: 1.6;
+            color: var(--text-main);
+            line-height: 1.5;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* --- CENTERED LARGE NAV --- */
+        /* --- SLEEK MINIMAL HEADER --- */
         header {
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 30px 8%;
+            padding: 15px 0; /* Reduced height */
             position: fixed;
             width: 100%;
             top: 0;
-            background: rgba(11, 15, 25, 0.8);
-            backdrop-filter: blur(12px);
+            background: rgba(5, 7, 10, 0.8);
+            backdrop-filter: blur(20px);
             z-index: 1000;
-            border-bottom: 1px solid var(--border);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         nav a {
-            margin: 0 25px;
-            color: #fff;
+            margin: 0 30px;
+            color: var(--text-muted);
             text-decoration: none;
-            font-weight: 600;
-            font-size: 20px; /* Bigger nav */
-            transition: 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-weight: 500;
+            font-size: 15px; /* Professional size */
+            letter-spacing: 0.5px;
+            transition: 0.3s ease;
         }
 
         nav a:hover { color: var(--accent); }
 
         /* --- HERO SECTION --- */
         .hero {
-            min-height: 100vh;
+            height: 90vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 120px 20px 60px;
-            background: radial-gradient(circle at 50% 50%, #1e3a8a33, transparent 70%);
+            padding: 0 20px;
+            background: radial-gradient(circle at 50% 50%, #0c1a3a 0%, transparent 60%);
         }
 
-        .hero h1 { font-size: clamp(40px, 8vw, 75px); font-weight: 800; margin-bottom: 10px; letter-spacing: -3px; }
-        .hero p.tagline { max-width: 700px; color: var(--text-muted); font-size: 1.3rem; margin-bottom: 25px; }
+        .hero h1 { 
+            font-size: clamp(48px, 10vw, 88px); 
+            font-weight: 900; 
+            letter-spacing: -3px; 
+            line-height: 1;
+            margin-bottom: 20px;
+            background: linear-gradient(180deg, #fff 0%, #94a3b8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-        /* Contact Links below Bio */
-        .hero-contact { margin-bottom: 40px; display: flex; gap: 20px; }
+        .hero p.tagline { 
+            max-width: 650px; 
+            color: var(--text-muted); 
+            font-size: 20px; 
+            font-weight: 400;
+            margin-bottom: 35px; 
+        }
+
+        .hero-contact { display: flex; gap: 15px; margin-bottom: 45px; }
         .hero-contact a {
-            color: var(--accent);
+            color: var(--text-main);
             text-decoration: none;
             font-weight: 600;
-            font-size: 16px;
-            padding: 8px 16px;
-            border: 1px solid var(--border);
+            font-size: 14px;
+            padding: 10px 20px;
             border-radius: 8px;
-            transition: 0.3s;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
         }
-        .hero-contact a:hover { background: var(--accent); color: #000; border-color: var(--accent); }
+        .hero-contact a:hover { border-color: var(--accent); background: rgba(56, 189, 248, 0.05); }
 
-        .btn-main {
-            text-decoration: none;
-            background: var(--accent);
+        .btn-cta {
+            background: var(--text-main);
             color: #000;
-            padding: 16px 40px;
+            padding: 14px 32px;
             border-radius: 50px;
-            font-weight: 800;
-            font-size: 18px;
-            transition: 0.4s;
-            box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            transition: 0.3s ease;
         }
-        .btn-main:hover { transform: scale(1.05); }
+        .btn-cta:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(255,255,255,0.1); }
 
-        /* --- FLOATING SKILLS MARQUEE --- */
+        /* --- BOLD BLACK SKILLS MARQUEE --- */
         .skills-marquee {
-            width: 100%;
-            overflow: hidden;
-            padding: 40px 0;
-            background: rgba(255,255,255,0.02);
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-            margin: 40px 0;
+            background: #000;
+            padding: 25px 0;
+            border-top: 1px solid #111;
+            border-bottom: 1px solid #111;
+            transform: rotate(-1deg);
+            width: 110%;
+            margin-left: -5%;
         }
 
         .marquee-content {
             display: flex;
-            gap: 40px;
-            animation: scroll 30s linear infinite;
-            white-space: nowrap;
+            gap: 60px;
+            animation: scroll 25s linear infinite;
         }
 
         .marquee-content span {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--border);
+            font-size: 28px;
+            font-weight: 900;
+            color: #fff;
             text-transform: uppercase;
+            letter-spacing: 2px;
+            white-space: nowrap;
         }
 
         @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
         }
 
-        /* --- EXPERIENCE SECTION (NOW AT TOP) --- */
-        .experience { padding: 80px 10%; }
-        .section-title { font-size: 36px; font-weight: 800; margin-bottom: 40px; text-align: center; }
+        /* --- ABOUT ME (FORMER SUMMARY) --- */
+        .about-section {
+            max-width: 800px;
+            margin: 100px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
 
-        .exp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .about-section h2 { font-size: 32px; font-weight: 800; margin-bottom: 20px; color: var(--accent); }
+        .about-section p { font-size: 18px; color: var(--text-muted); line-height: 1.8; }
+
+        /* --- EXPERIENCE SECTION --- */
+        .experience { padding: 80px 10%; background: #080a0f; }
+        .section-title { font-size: 42px; font-weight: 900; text-align: center; margin-bottom: 60px; letter-spacing: -1px; }
+
+        .exp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
         .exp-card {
             background: var(--card-bg);
-            padding: 35px;
-            border-radius: 20px;
+            padding: 40px;
+            border-radius: 24px;
             border: 1px solid var(--border);
             transition: 0.4s;
-            position: relative;
         }
-        .exp-card:hover { border-color: var(--accent); transform: translateY(-5px); }
-        .exp-card h3 { margin-bottom: 10px; font-size: 22px; }
-        .exp-card .company { color: var(--accent); font-weight: 700; margin-bottom: 15px; display: block; }
-        .exp-link { color: #fff; font-size: 14px; text-decoration: underline; opacity: 0.7; transition: 0.3s; }
-        .exp-link:hover { opacity: 1; color: var(--accent); }
+        .exp-card:hover { border-color: var(--accent); transform: scale(1.02); }
+        .exp-card h3 { font-size: 24px; margin-bottom: 8px; }
+        .company-label { color: var(--accent); font-weight: 700; text-transform: uppercase; font-size: 13px; letter-spacing: 1px; }
+        .exp-link { color: var(--text-muted); text-decoration: none; font-size: 13px; margin-top: 20px; display: inline-block; border-bottom: 1px solid transparent; }
+        .exp-link:hover { color: #fff; border-bottom-color: var(--accent); }
 
-        /* --- SUMMARY SECTION --- */
-        .summary-box {
-            max-width: 900px;
-            margin: 60px auto;
-            padding: 40px;
-            background: #111827;
-            border-radius: 24px;
-            border-left: 5px solid var(--accent);
-        }
-        .summary-box h2 { margin-bottom: 20px; }
-
-        /* --- PROJECTS GRID --- */
-        .container { max-width: 1200px; margin: 0 auto; padding: 100px 20px; }
-        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
+        /* --- PROJECTS --- */
+        .projects { padding: 100px 8%; }
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; }
         .project-card {
             background: var(--card-bg);
+            border-radius: 24px;
             border: 1px solid var(--border);
-            border-radius: 20px;
             overflow: hidden;
-            transition: 0.4s;
+            transition: 0.4s cubic-bezier(0.2, 0, 0, 1);
         }
-        .project-card:hover { border-color: var(--accent); box-shadow: 0 0 30px rgba(56, 189, 248, 0.1); }
-        .card-image { height: 230px; background: #1f2937; overflow: hidden; }
-        .card-image img { width: 100%; height: 100%; object-fit: cover; }
-        .card-content { padding: 30px; }
-        .tech-tag { background: #1f2937; padding: 4px 10px; border-radius: 6px; font-size: 12px; margin-right: 5px; color: var(--text-muted); }
+        .project-card:hover { border-color: var(--accent); }
+        .card-img { height: 250px; background: #1a1f2e; overflow: hidden; }
+        .card-img img { width: 100%; height: 100%; object-fit: cover; }
+        .card-body { padding: 30px; }
+        .card-body h3 { font-size: 22px; margin-bottom: 12px; }
+        .card-body p { color: var(--text-muted); font-size: 15px; margin-bottom: 20px; }
+        
+        .tech-pill {
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            margin-right: 5px;
+        }
 
-        footer { text-align: center; padding: 60px; color: var(--text-muted); }
+        footer { text-align: center; padding: 60px; color: #4b5563; font-size: 14px; border-top: 1px solid #111; }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 45px; }
-            nav a { margin: 0 10px; font-size: 16px; }
+            .hero h1 { font-size: 50px; }
+            .marquee-content span { font-size: 20px; }
         }
     </style>
 </head>
@@ -181,109 +208,96 @@
 
     <header>
         <nav>
-            <a href="#work">Work</a>
-            <a href="#contact">Contact</a>
+            <a href="#projects">Projects</a>
+            <a href="#experience">Experience</a>
         </nav>
     </header>
 
     <section class="hero">
-        <h1>AI Engineer & Data Scientist</h1>
-        <p class="tagline">Specializing in Agentic AI pipelines, RAG systems, and Deep Learning research.</p>
+        <h1>Shahzaib Khan</h1>
+        <p class="tagline">AI Engineer & Data Scientist specializing in Agentic AI pipelines, RAG systems, and Deep Learning research.</p>
         
-        <div class="hero-contact" id="contact">
+        <div class="hero-contact">
             <a href="https://github.com/shahzaibkhan7788">GitHub</a>
             <a href="https://www.linkedin.com/in/shahzaib-khan-35435b285">LinkedIn</a>
             <a href="mailto:shahzaibkhan.career@gmail.com">Email</a>
         </div>
 
-        <a href="#work" class="btn-main">View Projects</a>
+        <a href="#projects" class="btn-cta">Explore Projects</a>
     </section>
 
     <div class="skills-marquee">
         <div class="marquee-content">
-            <span>Generative AI</span> <span>LangGraph</span> <span>RAG Systems</span> <span>PyTorch</span> 
-            <span>Computer Vision</span> <span>LLMs (Llama 3, GPT-4)</span> <span>Vector Databases</span>
-            <span>Agentic AI</span> <span>NLP</span> <span>TensorFlow</span> <span>Docker</span>
-            <span>Generative AI</span> <span>LangGraph</span> <span>RAG Systems</span> <span>PyTorch</span> 
-            <span>Computer Vision</span> <span>LLMs (Llama 3, GPT-4)</span> <span>Vector Databases</span>
+            <span>Agentic AI</span> <span>Generative AI</span> <span>LangGraph</span> <span>RAG Systems</span> 
+            <span>Computer Vision</span> <span>Large Language Models</span> <span>Vector DB</span>
+            <span>Agentic AI</span> <span>Generative AI</span> <span>LangGraph</span> <span>RAG Systems</span> 
+            <span>Computer Vision</span> <span>Large Language Models</span> <span>Vector DB</span>
         </div>
     </div>
 
-    <section class="experience">
-        <h2 class="section-title">Professional Experience</h2>
+    <section class="about-section">
+        <h2>About Me</h2>
+        <p>Junior Data Scientist and Machine Learning Engineer with hands-on experience in Generative AI and autonomous agent pipelines. I build intelligent solutions using LangChain, LangGraph, and RAG. Passionate about designing efficient AI workflows to solve real-world problems.</p>
+    </section>
+
+    <section id="experience" class="experience">
+        <h2 class="section-title">Experience</h2>
         <div class="exp-grid">
-            
             <div class="exp-card">
-                <span class="company">Neurog.ai</span>
-                <h3>Machine Learning Intern</h3>
-                <p>Developing AI-powered trading features and ML models for financial systems.</p>
-                <br>
-                <a href="https://drive.google.com/file/d/1WGs97ievdwhicAjsvZI5kjYCvBtIZc9A/view?usp=sharing" class="exp-link">View Internship Certificate →</a>
+                <span class="company-label">Current Research</span>
+                <h3>AI Powered Intrusion</h3>
+                <p>Developing robust threat detection systems using advanced RAG pipelines and ML.</p>
+                <a href="https://drive.google.com/file/d/1ptWNTAJKUEMDXj0YPvILQe1SIOSTLMD2/view?usp=sharing" class="exp-link">View Details →</a>
             </div>
-
             <div class="exp-card">
-                <span class="company">Pattern Recognition Lab — PIEAS</span>
-                <h3>ML Research Intern</h3>
-                <p>Hybrid Autoencoder + Decision Tree models for critical heat flux prediction.</p>
-                <br>
-                <a href="https://drive.google.com/file/d/1ux1hRGk1WP7CTTqR6bFkHnBA4biMIoyg/view?usp=sharing" class="exp-link">View Research Certificate →</a>
+                <span class="company-label">Neurog.ai</span>
+                <h3>ML Intern</h3>
+                <p>Engineered AI-powered trading features and predictive models for financial markets.</p>
+                <a href="https://drive.google.com/file/d/1WGs97ievdwhicAjsvZI5kjYCvBtIZc9A/view?usp=sharing" class="exp-link">Certification →</a>
             </div>
-
             <div class="exp-card">
-                <span class="company">RAC Project (Current)</span>
-                <h3>AI Powered Intrusion Detection</h3>
-                <p>Developing a robust system for threat detection using advanced RAG and ML pipelines.</p>
-                <br>
-                <a href="https://drive.google.com/file/d/1ptWNTAJKUEMDXj0YPvILQe1SIOSTLMD2/view?usp=sharing" class="exp-link">View Project Details →</a>
+                <span class="company-label">PIEAS Lab</span>
+                <h3>Research Intern</h3>
+                <p>Applied Autoencoder + Decision Tree architectures for heat flux prediction research.</p>
+                <a href="https://drive.google.com/file/d/1ux1hRGk1WP7CTTqR6bFkHnBA4biMIoyg/view?usp=sharing" class="exp-link">View Papers/Cert →</a>
             </div>
-
         </div>
     </section>
 
-    <div class="container">
-        <div class="summary-box">
-            <h2>Professional Summary</h2>
-            <p>Junior Data Scientist and Machine Learning Engineer with hands-on experience in Generative AI, Large Language Models (LLMs), and Agentic AI systems. Actively working with modern AI frameworks such as LangChain, LangGraph, Retrieval-Augmented Generation (RAG), and autonomous agent pipelines to build intelligent, task-oriented AI solutions.</p>
-        </div>
-    </div>
-
-    <section id="work" class="container">
+    <section id="projects" class="projects">
         <h2 class="section-title">Selected Projects</h2>
         <div class="projects-grid">
             
             <div class="project-card">
-                <div class="card-image"><img src="images/github-agent.png" alt="GitHub Agent"></div>
-                <div class="card-content">
+                <div class="card-img"><img src="images/github-agent.png" alt="Project"></div>
+                <div class="card-body">
                     <h3>Adaptive Reasoning GitHub Agent</h3>
-                    <p>Agentic AI assistant for GitHub automation and workflow reasoning.</p>
-                    <div style="margin: 15px 0;">
-                        <span class="tech-tag">LangGraph</span><span class="tech-tag">Python</span>
-                    </div>
-                    <a href="https://github.com/shahzaibkhan7788/Adaptive_Reasoning_GitHub_AI_Agent" style="color:var(--accent); text-decoration:none; font-weight:700;">View Code →</a>
+                    <p>Agentic AI assistant for GitHub automation, repository analysis and reasoning.</p>
+                    <div><span class="tech-pill">PYTHON</span><span class="tech-pill">LANGGRAPH</span></div>
+                    <br>
+                    <a href="https://github.com/shahzaibkhan7788/Adaptive_Reasoning_GitHub_AI_Agent" style="color:var(--accent); text-decoration:none; font-weight:700; font-size:14px;">CODE REPOSITORY →</a>
                 </div>
             </div>
 
             <div class="project-card">
-                <div class="card-image"><img src="images/health-ai.png" alt="Healthcare AI"></div>
-                <div class="card-content">
+                <div class="card-img"><img src="images/health-ai.png" alt="Project"></div>
+                <div class="card-body">
                     <h3>AI Healthcare Assistant</h3>
-                    <p>Multi-agent RAG system for citation-aware medical knowledge assistance.</p>
-                    <div style="margin: 15px 0;">
-                        <span class="tech-tag">RAG</span><span class="tech-tag">Gemini Pro</span>
-                    </div>
-                    <a href="https://github.com/shahzaibkhan7788/smart-AI-healthcare-assistant-chatbot" style="color:var(--accent); text-decoration:none; font-weight:700;">View Code →</a>
+                    <p>Multi-agent RAG system delivering citation-aware medical knowledge assistance.</p>
+                    <div><span class="tech-pill">LLM</span><span class="tech-pill">CHROMA DB</span></div>
+                    <br>
+                    <a href="https://github.com/shahzaibkhan7788/smart-AI-healthcare-assistant-chatbot" style="color:var(--accent); text-decoration:none; font-weight:700; font-size:14px;">CODE REPOSITORY →</a>
                 </div>
             </div>
 
             <div class="project-card">
-                <div class="card-image"><img src="images/surveillance.png" alt="Surveillance"></div>
-                <div class="card-content">
+                <div class="card-img"><img src="images/surveillance.png" alt="Project"></div>
+                <div class="card-body">
                     <h3>Skeleton Surveillance</h3>
-                    <p>Computer vision system detecting abnormal human activities via pose estimation.</p>
-                    <div style="margin: 15px 0;">
-                        <span class="tech-tag">OpenCV</span><span class="tech-tag">PyTorch</span>
-                    </div>
-                    <a href="https://github.com/shahzaibkhan7788/Real-time-Skeleton-Based-Surveillance" style="color:var(--accent); text-decoration:none; font-weight:700;">View Code →</a>
+                    <p>Computer vision system detecting abnormal activities using high-precision pose estimation.</p>
+                    <div><span class="tech-pill">OPENCV</span><span class="tech-pill">PYTORCH</span></div>
+                    <br>
+                    <a href="https://github.com/shahzaibkhan7788/Real-time-Skeleton-Based-Surveillance" style="color:var(--accent); text-decoration:none; font-weight:700; font-size:14px;">CODE REPOSITORY →</a>
                 </div>
             </div>
 
@@ -291,7 +305,7 @@
     </section>
 
     <footer>
-        <p>© 2026 Shahzaib Khan • PIEAS University</p>
+        <p>© 2026 Shahzaib Khan • PIEAS University • Islamabad</p>
     </footer>
 
 </body>
