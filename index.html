@@ -15,7 +15,7 @@
             --text-muted: #9ca3af;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
         
         body {
             font-family: 'Inter', sans-serif;
@@ -26,28 +26,29 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* --- SLEEK MINIMAL HEADER --- */
+        /* --- SLIM PROFESSIONAL HEADER --- */
         header {
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 15px 0; /* Reduced height */
+            padding: 18px 0;
             position: fixed;
             width: 100%;
             top: 0;
-            background: rgba(5, 7, 10, 0.8);
+            background: rgba(5, 7, 10, 0.85);
             backdrop-filter: blur(20px);
             z-index: 1000;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         nav a {
-            margin: 0 30px;
+            margin: 0 25px;
             color: var(--text-muted);
             text-decoration: none;
-            font-weight: 500;
-            font-size: 15px; /* Professional size */
-            letter-spacing: 0.5px;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
             transition: 0.3s ease;
         }
 
@@ -55,29 +56,29 @@
 
         /* --- HERO SECTION --- */
         .hero {
-            height: 90vh;
+            height: 85vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             padding: 0 20px;
-            background: radial-gradient(circle at 50% 50%, #0c1a3a 0%, transparent 60%);
+            background: radial-gradient(circle at 50% 50%, #0c1a3a 0%, transparent 70%);
         }
 
         .hero h1 { 
-            font-size: clamp(48px, 10vw, 88px); 
+            font-size: clamp(50px, 9vw, 90px); 
             font-weight: 900; 
-            letter-spacing: -3px; 
+            letter-spacing: -4px; 
             line-height: 1;
             margin-bottom: 20px;
-            background: linear-gradient(180deg, #fff 0%, #94a3b8 100%);
+            background: linear-gradient(180deg, #fff 30%, #64748b 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .hero p.tagline { 
-            max-width: 650px; 
+            max-width: 700px; 
             color: var(--text-muted); 
             font-size: 20px; 
             font-weight: 400;
@@ -89,118 +90,122 @@
             color: var(--text-main);
             text-decoration: none;
             font-weight: 600;
-            font-size: 14px;
-            padding: 10px 20px;
-            border-radius: 8px;
+            font-size: 13px;
+            padding: 10px 22px;
+            border-radius: 12px;
             border: 1px solid var(--border);
-            transition: all 0.3s;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .hero-contact a:hover { border-color: var(--accent); background: rgba(56, 189, 248, 0.05); }
+        .hero-contact a:hover { 
+            border-color: var(--accent); 
+            background: rgba(56, 189, 248, 0.05);
+            transform: translateY(-2px);
+        }
 
         .btn-cta {
             background: var(--text-main);
             color: #000;
-            padding: 14px 32px;
+            padding: 16px 36px;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: 700;
+            font-weight: 800;
             font-size: 16px;
             transition: 0.3s ease;
         }
-        .btn-cta:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(255,255,255,0.1); }
+        .btn-cta:hover { transform: scale(1.05); box-shadow: 0 10px 30px rgba(56, 189, 248, 0.2); }
 
-        /* --- BOLD BLACK SKILLS MARQUEE --- */
-        .skills-marquee {
-            background: #000;
-            padding: 25px 0;
-            border-top: 1px solid #111;
-            border-bottom: 1px solid #111;
-            transform: rotate(-1deg);
-            width: 110%;
-            margin-left: -5%;
-        }
-
-        .marquee-content {
+        /* --- BOXED SKILLS (Visual Update) --- */
+        .skills-container {
+            max-width: 900px;
+            margin: 20px auto 60px;
+            padding: 0 20px;
             display: flex;
-            gap: 60px;
-            animation: scroll 25s linear infinite;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
         }
 
-        .marquee-content span {
-            font-size: 28px;
-            font-weight: 900;
-            color: #fff;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            white-space: nowrap;
+        .skill-box {
+            background: #111827;
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            transition: all 0.3s ease;
         }
 
-        @keyframes scroll {
-            from { transform: translateX(0); }
-            to { transform: translateX(-50%); }
+        .skill-box:hover {
+            border-color: var(--accent);
+            background: rgba(56, 189, 248, 0.1);
         }
 
-        /* --- ABOUT ME (FORMER SUMMARY) --- */
+        /* --- ABOUT ME --- */
         .about-section {
             max-width: 800px;
-            margin: 100px auto;
+            margin: 60px auto 100px;
             padding: 0 20px;
             text-align: center;
         }
 
-        .about-section h2 { font-size: 32px; font-weight: 800; margin-bottom: 20px; color: var(--accent); }
-        .about-section p { font-size: 18px; color: var(--text-muted); line-height: 1.8; }
+        .about-section h2 { font-size: 14px; text-transform: uppercase; letter-spacing: 3px; color: var(--accent); margin-bottom: 20px; }
+        .about-section p { font-size: 19px; color: var(--text-muted); line-height: 1.8; font-weight: 400; }
 
         /* --- EXPERIENCE SECTION --- */
-        .experience { padding: 80px 10%; background: #080a0f; }
-        .section-title { font-size: 42px; font-weight: 900; text-align: center; margin-bottom: 60px; letter-spacing: -1px; }
+        .experience { padding: 100px 10%; background: #080a0f; border-top: 1px solid #111; }
+        .section-title { font-size: 40px; font-weight: 900; text-align: center; margin-bottom: 60px; letter-spacing: -1.5px; }
 
         .exp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
         .exp-card {
             background: var(--card-bg);
             padding: 40px;
-            border-radius: 24px;
+            border-radius: 28px;
             border: 1px solid var(--border);
             transition: 0.4s;
         }
-        .exp-card:hover { border-color: var(--accent); transform: scale(1.02); }
-        .exp-card h3 { font-size: 24px; margin-bottom: 8px; }
-        .company-label { color: var(--accent); font-weight: 700; text-transform: uppercase; font-size: 13px; letter-spacing: 1px; }
-        .exp-link { color: var(--text-muted); text-decoration: none; font-size: 13px; margin-top: 20px; display: inline-block; border-bottom: 1px solid transparent; }
+        .exp-card:hover { border-color: var(--accent); background: #111927; }
+        .exp-card h3 { font-size: 24px; margin-bottom: 8px; font-weight: 700; }
+        .company-label { color: var(--accent); font-weight: 800; text-transform: uppercase; font-size: 12px; letter-spacing: 1.5px; display: block; margin-bottom: 10px; }
+        .exp-link { color: var(--text-muted); text-decoration: none; font-size: 13px; margin-top: 25px; display: inline-block; font-weight: 600; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 2px; }
         .exp-link:hover { color: #fff; border-bottom-color: var(--accent); }
 
         /* --- PROJECTS --- */
         .projects { padding: 100px 8%; }
-        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; }
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 35px; }
         .project-card {
             background: var(--card-bg);
-            border-radius: 24px;
+            border-radius: 28px;
             border: 1px solid var(--border);
             overflow: hidden;
             transition: 0.4s cubic-bezier(0.2, 0, 0, 1);
         }
-        .project-card:hover { border-color: var(--accent); }
-        .card-img { height: 250px; background: #1a1f2e; overflow: hidden; }
-        .card-img img { width: 100%; height: 100%; object-fit: cover; }
-        .card-body { padding: 30px; }
-        .card-body h3 { font-size: 22px; margin-bottom: 12px; }
-        .card-body p { color: var(--text-muted); font-size: 15px; margin-bottom: 20px; }
+        .project-card:hover { border-color: var(--accent); transform: translateY(-5px); }
+        .card-img { height: 240px; background: #1a2233; overflow: hidden; }
+        .card-img img { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; transition: 0.5s; }
+        .project-card:hover .card-img img { opacity: 1; transform: scale(1.05); }
+        .card-body { padding: 35px; }
+        .card-body h3 { font-size: 24px; margin-bottom: 12px; font-weight: 700; }
+        .card-body p { color: var(--text-muted); font-size: 15px; margin-bottom: 25px; height: 45px; overflow: hidden; }
         
         .tech-pill {
-            background: rgba(56, 189, 248, 0.1);
-            color: var(--accent);
-            padding: 4px 12px;
-            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            color: #d1d5db;
+            padding: 6px 14px;
+            border-radius: 50px;
             font-size: 11px;
             font-weight: 700;
-            margin-right: 5px;
+            margin-right: 6px;
+            border: 1px solid rgba(255,255,255,0.1);
         }
 
-        footer { text-align: center; padding: 60px; color: #4b5563; font-size: 14px; border-top: 1px solid #111; }
+        footer { text-align: center; padding: 80px; color: #4b5563; font-size: 14px; font-weight: 500; }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 50px; }
-            .marquee-content span { font-size: 20px; }
+            .hero h1 { font-size: 55px; }
+            .hero p.tagline { font-size: 17px; }
+            nav a { margin: 0 15px; font-size: 12px; }
         }
     </style>
 </head>
@@ -223,21 +228,26 @@
             <a href="mailto:shahzaibkhan.career@gmail.com">Email</a>
         </div>
 
-        <a href="#projects" class="btn-cta">Explore Projects</a>
+        <a href="#projects" class="btn-cta">Explore Work</a>
     </section>
 
-    <div class="skills-marquee">
-        <div class="marquee-content">
-            <span>Agentic AI</span> <span>Generative AI</span> <span>LangGraph</span> <span>RAG Systems</span> 
-            <span>Computer Vision</span> <span>Large Language Models</span> <span>Vector DB</span>
-            <span>Agentic AI</span> <span>Generative AI</span> <span>LangGraph</span> <span>RAG Systems</span> 
-            <span>Computer Vision</span> <span>Large Language Models</span> <span>Vector DB</span>
-        </div>
+    <div class="skills-container">
+        <div class="skill-box">Agentic AI</div>
+        <div class="skill-box">Generative AI</div>
+        <div class="skill-box">LangGraph</div>
+        <div class="skill-box">RAG Systems</div>
+        <div class="skill-box">Large Language Models</div>
+        <div class="skill-box">Computer Vision</div>
+        <div class="skill-box">Vector DB</div>
+        <div class="skill-box">PyTorch</div>
+        <div class="skill-box">NLP</div>
+        <div class="skill-box">Docker</div>
+        <div class="skill-box">Scikit-Learn</div>
     </div>
 
     <section class="about-section">
         <h2>About Me</h2>
-        <p>Junior Data Scientist and Machine Learning Engineer with hands-on experience in Generative AI and autonomous agent pipelines. I build intelligent solutions using LangChain, LangGraph, and RAG. Passionate about designing efficient AI workflows to solve real-world problems.</p>
+        <p>Junior Data Scientist and Machine Learning Engineer with hands-on experience in Generative AI and autonomous agent pipelines. I build intelligent solutions using LangChain, LangGraph, and RAG. Currently focused on applying cutting-edge AI techniques to secure and efficient real-world workflows.</p>
     </section>
 
     <section id="experience" class="experience">
@@ -245,37 +255,38 @@
         <div class="exp-grid">
             <div class="exp-card">
                 <span class="company-label">Current Research</span>
-                <h3>AI Powered Intrusion</h3>
-                <p>Developing robust threat detection systems using advanced RAG pipelines and ML.</p>
-                <a href="https://drive.google.com/file/d/1ptWNTAJKUEMDXj0YPvILQe1SIOSTLMD2/view?usp=sharing" class="exp-link">View Details →</a>
+                <h3>AI Powered Intrusion Detection</h3>
+                <p>Developing robust threat detection systems using advanced RAG pipelines and deep learning models.</p>
+                <a href="https://drive.google.com/file/d/1ptWNTAJKUEMDXj0YPvILQe1SIOSTLMD2/view?usp=sharing" class="exp-link">View Documentation →</a>
             </div>
             <div class="exp-card">
                 <span class="company-label">Neurog.ai</span>
                 <h3>ML Intern</h3>
-                <p>Engineered AI-powered trading features and predictive models for financial markets.</p>
-                <a href="https://drive.google.com/file/d/1WGs97ievdwhicAjsvZI5kjYCvBtIZc9A/view?usp=sharing" class="exp-link">Certification →</a>
+                <p>Engineered AI-powered trading features and predictive models for financial market automation.</p>
+                <a href="https://drive.google.com/file/d/1WGs97ievdwhicAjsvZI5kjYCvBtIZc9A/view?usp=sharing" class="exp-link">Internship Certificate →</a>
             </div>
             <div class="exp-card">
                 <span class="company-label">PIEAS Lab</span>
                 <h3>Research Intern</h3>
-                <p>Applied Autoencoder + Decision Tree architectures for heat flux prediction research.</p>
-                <a href="https://drive.google.com/file/d/1ux1hRGk1WP7CTTqR6bFkHnBA4biMIoyg/view?usp=sharing" class="exp-link">View Papers/Cert →</a>
+                <p>Collaborated on hybrid Autoencoder + Decision Tree architectures for thermal research applications.</p>
+                <a href="https://drive.google.com/file/d/1ux1hRGk1WP7CTTqR6bFkHnBA4biMIoyg/view?usp=sharing" class="exp-link">Research Certificate →</a>
             </div>
         </div>
     </section>
 
     <section id="projects" class="projects">
-        <h2 class="section-title">Selected Projects</h2>
+        <h2 class="section-title">Featured Projects</h2>
         <div class="projects-grid">
             
             <div class="project-card">
                 <div class="card-img"><img src="images/github-agent.png" alt="Project"></div>
                 <div class="card-body">
                     <h3>Adaptive Reasoning GitHub Agent</h3>
-                    <p>Agentic AI assistant for GitHub automation, repository analysis and reasoning.</p>
-                    <div><span class="tech-pill">PYTHON</span><span class="tech-pill">LANGGRAPH</span></div>
-                    <br>
-                    <a href="https://github.com/shahzaibkhan7788/Adaptive_Reasoning_GitHub_AI_Agent" style="color:var(--accent); text-decoration:none; font-weight:700; font-size:14px;">CODE REPOSITORY →</a>
+                    <p>Agentic AI assistant for GitHub automation, repository analysis and complex reasoning.</p>
+                    <div style="margin-top: 10px;">
+                        <span class="tech-pill">LANGGRAPH</span><span class="tech-pill">PYTHON</span>
+                    </div>
+                    <a href="https://github.com/shahzaibkhan7788/Adaptive_Reasoning_GitHub_AI_Agent" style="color:var(--accent); text-decoration:none; font-weight:700; font-size:13px; margin-top: 25px; display: inline-block;">SOURCE CODE →</a>
                 </div>
             </div>
 
@@ -283,10 +294,11 @@
                 <div class="card-img"><img src="images/health-ai.png" alt="Project"></div>
                 <div class="card-body">
                     <h3>AI Healthcare Assistant</h3>
-                    <p>Multi-agent RAG system delivering citation-aware medical knowledge assistance.</p>
-                    <div><span class="tech-pill">LLM</span><span class="tech-pill">CHROMA DB</span></div>
-                    <br>
-                    <a href="https://github.com/shahzaibkhan7788/smart-AI-healthcare-assistant-chatbot" style="color:var(--accent); text-decoration:none; font-weight:700; font-size:14px;">CODE REPOSITORY →</a>
+                    <p>Multi-agent RAG system delivering citation-aware medical knowledge and assistant chat.</p>
+                    <div style="margin-top: 10px;">
+                        <span class="tech-pill">LLM</span><span class="tech-pill">CHROMA DB</span>
+                    </div>
+                    <a href="https://github.com/shahzaibkhan7788/smart-AI-healthcare-assistant-chatbot" style="color:var(--accent); text-decoration:none; font-weight:700; font-size:13px; margin-top: 25px; display: inline-block;">SOURCE CODE →</a>
                 </div>
             </div>
 
@@ -295,9 +307,10 @@
                 <div class="card-body">
                     <h3>Skeleton Surveillance</h3>
                     <p>Computer vision system detecting abnormal activities using high-precision pose estimation.</p>
-                    <div><span class="tech-pill">OPENCV</span><span class="tech-pill">PYTORCH</span></div>
-                    <br>
-                    <a href="https://github.com/shahzaibkhan7788/Real-time-Skeleton-Based-Surveillance" style="color:var(--accent); text-decoration:none; font-weight:700; font-size:14px;">CODE REPOSITORY →</a>
+                    <div style="margin-top: 10px;">
+                        <span class="tech-pill">OPENCV</span><span class="tech-pill">PYTORCH</span>
+                    </div>
+                    <a href="https://github.com/shahzaibkhan7788/Real-time-Skeleton-Based-Surveillance" style="color:var(--accent); text-decoration:none; font-weight:700; font-size:13px; margin-top: 25px; display: inline-block;">SOURCE CODE →</a>
                 </div>
             </div>
 
@@ -305,7 +318,7 @@
     </section>
 
     <footer>
-        <p>© 2026 Shahzaib Khan • PIEAS University • Islamabad</p>
+        <p>© 2026 Shahzaib Khan • PIEAS University • AI Research</p>
     </footer>
 
 </body>
